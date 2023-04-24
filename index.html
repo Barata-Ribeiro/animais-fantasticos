@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animais Fantásticos</title>
+    <meta name="author" content="Barata.Ribeiro" />
+    <meta name="description" content="Site desenvolvido durante o curso de JavaScript ES6+ da Origamid.com" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;700&family=Playfair+Display+SC&display=swap" rel="stylesheet">
+    <script>document.documentElement.className += ' js';</script>
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
+    <script defer src="./main.js"></script>
+</head>
+
+<body>
+    <!-- <div data-cor="azul" data-anima-scroll="left" data-width="500">Uma Div</div> -->
+    <div class="grid-container">
+        <nav class="menu" data-menu="suave">
+            <button data-menu="button" aria-expanded="false" aria-controls="menu">Menu</button>
+            <ul data-menu="list" id="menu">
+                <li><a href="#animais">Animais</a></li>
+                <li data-dropdown>
+                    <a href="sobre.html">Sobre</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="empresa.html">A Empresa</a></li>
+                        <li><a href="equipe.html">Equipe</a></li>
+                        <li><a href="socios.html">Sócios</a></li>
+                        <li><a href="investidores.html">Investidores</a>
+                        </li>
+                    </ul>
+                </li>
+                <li><a href="#faq">FAQ</a></li>
+                <li><a href="#contato">Contato</a></li>
+                <li><a href="http://portfolio.barataribeiro.com/">Dev</a></li>
+                <li><a data-modal="abrir" href="./login.html">Login →</a></li>
+            </ul>
+        </nav>
+        <section class="grid-section animais" data-anime="scroll" id="animais" aria-label="Animais Fantástico">
+            <h1 class="titulo">Animais Fantásticos</h1>
+            <ul class="animais-lista" data-tab="menu">
+                <li><img src="img/imagem1.jpg" alt="Raposa"></li>
+                <li><img src="img/imagem2.jpg" alt="Esquilo"></li>
+                <li><img src="img/imagem3.jpg" alt="Urso"></li>
+                <li><img src="img/imagem4.jpg" alt="Lobo"></li>
+                <li><img src="img/imagem5.jpg" alt="Macaco"></li>
+                <li><img src="img/imagem6.jpg" alt="Leão"></li>
+            </ul>
+            <div class="animais-descricao" data-tab="content">
+                <section data-anime="show-right">
+                    <h2>Raposa</h2>
+                    <p>Raposas são pequenos a médios mamíferos onívoros pertencentes a vários gêneros da família Canidae. As raposas têm o crânio achatado, orelhas triangulares verticais, focinho pontiagudo e ligeiramente arrebitado e uma cauda longa e espessa.</p>
+                    <p>Doze espécies pertencem ao grupo monofilético de "raposas verdadeiras" do gênero Vulpes. Aproximadamente outras 25 espécies atuais ou extintas são parte do grupo parafilético das raposas sul-americanas ou do grupo periférico, que consiste na raposa-orelhas-de-morcego, raposa-cinzenta e raposa-das-ilhas.</p>
+                    <p>As raposas vivem em todos os continentes, exceto a Antártida. De longe, a espécie mais comum e difundida de raposa é a raposa vermelha (Vulpes vulpes) com cerca de 47 subespécies reconhecidas.</p>
+                    <p>A distribuição global das raposas, juntamente com sua ampla reputação de astúcia, contribuíram para sua proeminência na cultura popular e no folclore em muitas sociedades ao redor do mundo.</p>
+                </section>
+                <section data-anime="show-right">
+                    <h2>Esquilo</h2>
+                    <p>Os esquilos pertencem a uma grande família de mamíferos roedores, de pequeno e médio porte, conhecida como Sciuridae.</p>
+                    <p>Os esquilos estão espalhados por quase todo o mundo, a maioria nas zonas de climas temperado ou tropical, mas também em algumas zonas de clima frio. Como todos os roedores, possuem presas fortíssimas, com que roem facilmente sementes, principalmente bolotas.</p>
+                    <p>As sementes são as principais fontes de alimentação, mas também consomem insetos e frutas. Quando coletam alimento, enterram algumas sementes que encontram, sendo que algumas chegam a germinar, como pinhões e coquinhos, acabando por plantar árvores como araucária e jerivá.</p>
+                    <p>Os esquilos terrestres são diurnos e fazem túneis debaixo do solo, onde constroem os seus ninhos, estando para isso fisicamente adaptados.</p>
+                </section>
+                <section data-anime="show-down">
+                    <h2>Urso</h2>
+                    <p>Os Ursos constituem uma família de mamíferos plantígrados, geralmente de grande porte, contendo os ursos e os pandas.</p>
+                    <p>Algumas características comuns dos ursos são pelagem espessa, rabo curto, o olfato desenvolvido e as garras não retráteis. Os ursídeos são geralmente animais omnívoros, mas se alimentam principalmente de carne.</p>
+                    <p>A maioria dos ursos costumam preparar-se para hibernar durante o inverno, comendo grandes quantidades de comida antes de entrar em uma toca para o período de sono profundo.</p>
+                    <p>Os ursos existem em todos os continentes, em exceção na África, embora algumas fontes afirmem terem avistado o Urso nandi, mas sem comprovarem a sua existência.</p>
+                </section>
+                <section data-anime="show-down">
+                    <h2>Lobo</h2>
+                    <p>O lobo (também chamado de lobo-cinzento) é uma espécie de mamífero canídeo do gênero Canis. É um sobrevivente da Era do Gelo, originário do Pleistoceno Superior, cerca de 300 mil anos atrás. É o maior membro remanescente selvagem da família canidae.</p>
+                    <p>Os lobos-cinzentos são tipicamente predadores ápice nos ecossistemas que ocupam. Embora não sejam tão adaptáveis à presença humana como geralmente ocorre com as demais espécies de canídeos, os lobos se desenvolveram em diversos ambientes, como florestas temperadas, desertos, montanhas, tundras, taigas, campos e até mesmo em algumas áreas urbanas.</p>
+                    <p>O peso e tamanho dos lobos variam muito em todo o mundo, tendendo a aumentar proporcionalmente com a latitude, como previsto pela teoria de Christian Bergmann. Em geral, a altura, medida a partir dos ombros, varia de 60 a 95 centímetros.</p>
+                    <p>Os lobos são capazes de percorrer longas distâncias com uma velocidade média de 10 quilômetros por hora e são conhecidos por atingir velocidades próximas a 65 quilômetros por hora durante uma perseguição.</p>
+                </section>
+                <section data-anime="show-right">
+                    <h2>Babuíno</h2>
+                    <p>Babuíno é a designação genérica para antropoides cercopitecídeos do gênero Papio e afins, caracterizados pelo focinho pontudo, caninos grandes, bochechas volumosas e calosidades nas nádegas.</p>
+                    <p>É um animal semi-quadrúpede da ordem dos primatas que mede até 120 centímetros de comprimento. Vive na África e seu habitat natural é nos campos abertos (savana, pastagens ou terrenos rochosos).</p>
+                    <p>Ao contrário dos macacos, os babuínos passam a maior parte do tempo no chão. Suas caudas não são preênseis. Os babuínos são grandes lutadores e demonstram pouco medo de outros animais, inclusive seres humanos. Todos têm hierarquias fortes e complexas dentro dos grupos familiares.</p>
+                    <p>Os babuínos são onívoros, isto é, comem muitos tipos diferentes de alimento. A sua dieta, entretanto, varia de acordo com a estação do ano, o território que está sendo habitado, a idade e o sexo do indivíduo. As fêmeas e os filhotes recém-nascidos, por exemplo, alimentam-se de capim, já os filhotes mais desenvolvidos comem casca de árvore, insetos e lagartos.</p>
+                </section>
+                <section data-anime="show-right">
+                    <h2>Leão</h2>
+                    <p>O leão é uma espécie de mamífero carnívoro do gênero Panthera e da família Felidae. A espécie é atualmente encontrada na África subsaariana e na Ásia, com uma única população remanescente em perigo, no Parque Nacional da Floresta de Gir, Gujarat, Índia.</p>
+                    <p>A pelagem é unicolor de coloração castanha, e os machos apresentam uma juba característica. Uma das características mais marcantes da espécie é a presença de um tufo de pelos pretos na cauda, que também possui uma espora.</p>
+                    <p>A dieta consiste principalmente de grandes ungulados e possuem hábitos noturnos e crepusculares, descansando e dormindo na maior parte do dia. Leões vivem por volta de 10-14 anos na natureza, enquanto em cativeiro eles podem viver por até 30 anos.</p>
+                    <p>Por centenas de anos, o leão tem sido usado como símbolo de bravura e nobreza em diversas civilizações e culturas da Europa, Ásia e África. Está amplamente representado em esculturas, pinturas, bandeiras nacionais, brasões, e em filmes e na literatura contemporâneos.</p>
+                </section>
+            </div>
+        </section>
+        <section class="grid-section faq" data-anime="scroll" id="faq" aria-label="Perguntas e Respostas">
+            <h1 class="titulo">FAQ</h1>
+            <dl class="faq-lista" data-anime="accordion">
+                <dt>Qual a idade dos animais?</dt>
+                <dd>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi accusamus maiores earum hic voluptas iure, quisquam totam distinctio tenetur dolor.</dd>
+                <dt>Eles são fantásticos?</dt>
+                <dd>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit nulla dolorum ab magni eveniet suscipit.</dd>
+                <dt>Qual a diferença?</dt>
+                <dd>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Impedit nam voluptas, eius et asperiores ad necessitatibus architecto accusantium quidem aliquam repellendus, ratione hic omnis, repudiandae rem obcaecati quasi odit quibusdam.</dd>
+                <dt>Como proteger?</dt>
+                <dd>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Hic harum autem architecto, facilis nulla amet perferendis? Neque nam officia nihil fugit facere aut sunt eaque?</dd>
+            </dl>
+        </section>
+
+        <section class="grid-section numeros" data-anime="scroll">
+            <h1 class="titulo">Números</h1>
+            <div class="grid-numeros">
+            </div>
+        </section>
+
+        <section class="grid-section contato" data-anime="scroll" id="contato" aria-label="Contato">
+            <h1 class="titulo">Contato</h1>
+            <div class="mapa" data-tooltip aria-label="Endereço próximo ao estacionamento">
+                <img src="./img/mapa.png" alt="Mapa da Instituição">
+            </div>
+            <ul class="dados">
+                <li>contato@animaisfantasticos.com</li>
+                <li>+55 (21) 99999-9999</li>
+                <li>Rua do Chinelo, nº 25</li>
+                <li>Rio de Janeiro - RJ</li>
+                <li>Doe <span class="btc-preco"></span> bitcoins para nos ajudar</li>
+                <li data-semana="1, 2, 3, 4, 5" data-horario="8, 18">Seg à Sex das 9 às 18</li>
+            </ul>
+        </section>
+        <footer class="copy">
+            <p>Animais Fantástico © Alguns direitos reservados.</p>
+        </footer>
+    </div>
+
+    <section class="modal-container" data-modal="container">
+        <div class="modal">
+            <button data-modal="fechar" class="fechar">X</button>
+            <form action="">
+                <label for="email">Email</label>
+                <input type="text" for="email" id="email" placeholder="contato@email.com" required>
+                <label for="senha">Senha</label>
+                <input type="password" for="senha" id="senha" required>
+                <button type="submit">Entrar</button>
+            </form>
+        </div>
+    </section>
+</body>
+
+</html>
