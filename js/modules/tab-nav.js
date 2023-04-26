@@ -37,5 +37,7 @@ export default class TabNav {
             this.activeTab(0);
             this.addTabNavEvent();
         }
+        // Retorna o objeto para permitir o encadeamento de métodos
+        return this;
     }
 }
