@@ -35,5 +35,7 @@ export default class Accordion {
             // Adiciona os eventos de 'click' aos itens do acordeão.
             this.addAccordionEvent();
         }
+        // Retorna o objeto para permitir o encadeamento de métodos
+        return this;
     }
 }
