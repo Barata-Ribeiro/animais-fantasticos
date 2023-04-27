@@ -1,4 +1,4 @@
-import initAnimaNumbers from './anima-numeros.js';
+import AnimaNumbers from './anima-numeros.js';
 
 export default function initFetchAnimais() {
     function createAnimal(animal) {
@@ -34,7 +34,9 @@ export default function initFetchAnimais() {
             });
             // Inicia a função de animação somente quando
             // o fetch terminar
-            initAnimaNumbers();
+            const animaNumbers = new AnimaNumbers('[data-numero]', '.numeros', 'ativo');
+            animaNumbers.init();
+
             // Se tiver algum error, estará no log
         } catch (error) {
             console.log(error);
