@@ -1,4 +1,5 @@
 export default function initFetchBitcoin() {
+    console.log('Teste');
     // Usando promises, faz um fetch na api de btc
     fetch('https://blockchain.info/ticker')
         // a resposta transforma em JSON
