@@ -1,23 +1,60 @@
+// Define a classe ScrollAnima
 export default class ScrollAnima {
+    // Construtor da classe
     constructor(sections) {
+        // Seleciona os elementos baseado no seletor recebido
         this.sections = document.querySelectorAll(sections);
+        // Define a altura da janela multiplicada por 0.6
+        // como referência para animação
         this.halfWindow = window.innerHeight * 0.6;
-        this.animaScroll = this.animaScroll.bind(this);
+
+        // Faz o bind do método checkDistance para ter o 'this' correto
+        this.checkDistance = this.checkDistance.bind(this);
     }
 
-    animaScroll() {
-        this.sections.forEach((section) => {
-            const sectionTop = section.getBoundingClientRect().top;
-            const isSectionVisible = sectionTop - this.halfWindow < 0;
-            if (isSectionVisible) section.classList.add('ativo');
-            else if (section.classList.contains('ativo')) {
-                section.classList.remove('ativo');
+    // Método que retorna a distância dos elementos
+    // em relação ao topo do site
+    getDistance() {
+        this.distance = [...this.sections].map((section) => {
+            const offset = section.offsetTop;
+            return {
+                element: section,
+                offset: Math.floor(offset - this.halfWindow),
+            };
+        });
+    }
+
+    // Método que verifica a distância de cada objeto
+    // em relação ao scroll do site
+    checkDistance() {
+        this.distance.forEach((item) => {
+            // Verifica se a posição do scroll está além do offset do elemento
+            if (window.pageYOffset > item.offset) {
+                // Adiciona a classe 'ativo' ao elemento
+                item.element.classList.add('ativo');
+            } else if (item.element.classList.contains('ativo')) {
+                // Remove a classe 'ativo' caso o elemento já a possua
+                item.element.classList.remove('ativo');
             }
         });
     }
 
+    // Método que inicializa a animação
     init() {
-        this.animaScroll();
-        window.addEventListener('scroll', this.animaScroll);
+        // Verifica se há elementos para animar
+        if (this.sections.length) {
+            this.getDistance();
+            this.checkDistance();
+            // Adiciona o evento de scroll ao objeto window
+            // e associa ao método checkDistance
+            window.addEventListener('scroll', this.checkDistance);
+        }
+        return this;
+    }
+
+    // Método que remove o evento de scroll
+    stop() {
+        // Remove o evento de scroll associado ao método checkDistance
+        window.removeEventListener('scroll', this.checkDistance);
     }
 }
