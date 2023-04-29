@@ -8,7 +8,7 @@ import initMenuMobile from './modules/menu-mobile.js';
 import initOperations from './modules/funcionamento.js';
 import fetchAnimais from './modules/fetch-animais.js';
 import fetchBitcoin from './modules/fetchBitcoin.js';
-import initScrollAnimation from './modules/anima-scroll.js';
+import ScrollAnima from './modules/scroll-anima.js';
 
 const smoothScroll = new SmoothScroll('[data-menu="suave"] a[href^="#"]');
 smoothScroll.init();
@@ -25,7 +25,9 @@ modal.init();
 const tooltip = new Tooltip('[data-tooltip]', 'ativo');
 tooltip.init();
 
-initScrollAnimation();
+const scrollAnima = new ScrollAnima('[data-anime="scroll"]');
+scrollAnima.init();
+
 initDropdownMenu();
 initMenuMobile();
 initOperations();
