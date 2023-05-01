@@ -1,4 +1,5 @@
-// Define a classe ScrollAnima
+import debounce from './debounce.js';
+
 export default class ScrollAnima {
     // Construtor da classe
     constructor(sections) {
@@ -9,7 +10,8 @@ export default class ScrollAnima {
         this.halfWindow = window.innerHeight * 0.6;
 
         // Faz o bind do método checkDistance para ter o 'this' correto
-        this.checkDistance = this.checkDistance.bind(this);
+        // e usa debounce para prevenir a ativação constante da animação
+        this.checkDistance = debounce(this.checkDistance.bind(this), 50);
     }
 
     // Método que retorna a distância dos elementos
@@ -27,6 +29,7 @@ export default class ScrollAnima {
     // Método que verifica a distância de cada objeto
     // em relação ao scroll do site
     checkDistance() {
+        console.log('teste');
         this.distance.forEach((item) => {
             // Verifica se a posição do scroll está além do offset do elemento
             if (window.pageYOffset > item.offset) {
