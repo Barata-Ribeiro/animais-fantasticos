@@ -52,7 +52,7 @@ cd animais-fantasticos
 
 If you find any issues or have suggestions for improvements, feel free to open an issue or submit a pull request.
 
-1. After cloning the repository, run Node.js to install dependencies:
+1. After cloning the repository, run the script to install dependencies:
 
 ```
 npm install
@@ -64,7 +64,7 @@ npm install
 git checkout -b branch-name
 ```
 
-3. Run the Node.js script to update live.
+3. Run the `dev` script to update live.
 
 ```
 npm run dev
@@ -72,7 +72,7 @@ npm run dev
 
 4. Make all the necessary changes to the project...
 
-5. Stop the Node.js script and run the build script:
+5. Stop the `dev` script and run the `build` script:
 
 ```
 npm run build
