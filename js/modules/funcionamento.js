@@ -1,24 +1,46 @@
-export default function initOperations() {
-    const operation = document.querySelector('[data-semana');
-    // Pega os números, transforma em array com split(), transforma em números com map()
-    const weekDays = operation.dataset.semana.split(',').map(Number);
-    const weekHours = operation.dataset.horario.split(',').map(Number);
+export default class Operations {
+    constructor(opData, activeClass) {
+        this.operation = document.querySelector(opData);
+        this.activeClass = activeClass;
+    }
 
-    // Variável para criar data
-    const todayDate = new Date();
-    // Constante com o dia de hoje
-    const todayDay = todayDate.getDay();
-    // Constante com a hora atual
-    const todayHour = todayDate.getHours();
-    // Constante que compara o dia de hoje com os dias da semana
-    const OpenWeekday = weekDays.indexOf(todayDay) !== -1;
-    // Se hora atual for maior ou igual horario funcionamento abertura
-    // E hora atual for menor que horário funcionamento fechamento
-    const OpenHour = todayHour >= weekHours[0] && todayHour < weekHours[1];
-    // Se semana funcionamento true e horario funcionamento true
-    if (OpenWeekday && OpenHour) {
-        // Add classe 'aberto'
-        operation.classList.add('aberto');
+    workingData() {
+        // Pega os números, transforma em array com split(), transforma em números com map()
+        this.weekDays = this.operation.dataset.semana.split(',').map(Number);
+        this.weekHours = this.operation.dataset.horario.split(',').map(Number);
+    }
+
+    currentData() {
+        // Propriedade para criar data
+        this.todayDate = new Date();
+        // Propriedade com o dia de hoje
+        this.todayDay = this.todayDate.getDay();
+        // Propriedade com a hora atual de Brasilia
+        this.todayHour = this.todayDate.getUTCHours() - 3;
+    }
+
+    isOpen() {
+        // Variável que compara o dia de hoje com os dias da semana
+        const OpenWeekday = this.weekDays.indexOf(this.todayDay) !== -1;
+        // Se hora atual for maior ou igual horário funcionamento abertura
+        // E hora atual for menor que horário funcionamento fechamento
+        const OpenHour = this.todayHour >= this.weekHours[0] && this.todayHour < this.weekHours[1];
+        return OpenWeekday && OpenHour;
+    }
+
+    activeOpen() {
+        if (this.isOpen()) {
+            this.operation.classList.add(this.activeClass);
+        }
+    }
+
+    init() {
+        if (this.operation) {
+            this.workingData();
+            this.currentData();
+            this.activeOpen();
+        }
+        return this;
     }
 }
 
