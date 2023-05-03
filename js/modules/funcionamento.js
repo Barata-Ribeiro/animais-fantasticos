@@ -1,45 +1,58 @@
+// Adicionando comentários e revisando o código
+
 export default class Operations {
+    // Construtor da classe com dois parâmetros: opData e activeClass
     constructor(opData, activeClass) {
+        // Seleciona o elemento com o seletor opData e atribui à propriedade 'operation'
         this.operation = document.querySelector(opData);
+        // Atribui o valor de 'activeClass' à propriedade 'activeClass'
         this.activeClass = activeClass;
     }
 
     workingData() {
-        // Pega os números, transforma em array com split(), transforma em números com map()
+        // Pega os dados de dias e horários de semana no atributo 'data' do elemento 'operation'
+        // e os converte em arrays de números
         this.weekDays = this.operation.dataset.semana.split(',').map(Number);
         this.weekHours = this.operation.dataset.horario.split(',').map(Number);
     }
 
     currentData() {
-        // Propriedade para criar data
+        // Atribui a data atual à propriedade 'todayDate'
         this.todayDate = new Date();
-        // Propriedade com o dia de hoje
+        // Atribui o dia atual à propriedade 'todayDay'
         this.todayDay = this.todayDate.getDay();
-        // Propriedade com a hora atual de Brasilia
+        // Atribui a hora atual de Brasília à propriedade 'todayHour'
         this.todayHour = this.todayDate.getUTCHours() - 3;
     }
 
     isOpen() {
-        // Variável que compara o dia de hoje com os dias da semana
+        // Verifica se o dia atual está entre os dias de funcionamento
         const OpenWeekday = this.weekDays.indexOf(this.todayDay) !== -1;
-        // Se hora atual for maior ou igual horário funcionamento abertura
-        // E hora atual for menor que horário funcionamento fechamento
+        // Verifica se a hora atual está dentro do horário de funcionamento
         const OpenHour = this.todayHour >= this.weekHours[0] && this.todayHour < this.weekHours[1];
+
+        // Retorna verdadeiro se ambos OpenWeekday e OpenHour forem verdadeiros
         return OpenWeekday && OpenHour;
     }
 
     activeOpen() {
+        // Se a função 'isOpen()' retornar verdadeiro,
+        // adiciona a classe 'activeClass' ao elemento 'operation'
         if (this.isOpen()) {
             this.operation.classList.add(this.activeClass);
         }
     }
 
+    // Método para inicializar a classe
     init() {
+        // Verifica se a propriedade 'operation' existe
         if (this.operation) {
+            // Chama os métodos 'workingData', 'currentData' e 'activeOpen'
             this.workingData();
             this.currentData();
             this.activeOpen();
         }
+        // Retorna a instância da classe
         return this;
     }
 }
