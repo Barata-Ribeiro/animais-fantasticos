@@ -5,8 +5,8 @@ export default class Tooltip {
         this.tooltips = document.querySelectorAll(tooltips);
 
         // Bind do objeto da classe aos callbacks
-        this.onMouseMove = this.onMouseMove.bind(this);
         this.onMouseLeave = this.onMouseLeave.bind(this);
+        this.onMouseMove = this.onMouseMove.bind(this);
         this.onMouseOver = this.onMouseOver.bind(this);
     }
 
@@ -18,11 +18,8 @@ export default class Tooltip {
 
         // Verifica a posição horizontal da tooltip
         // e ajusta para não sair da tela
-        if (event.pageX + 240 > window.innerWidth) {
-            this.tooltipBox.style.left = `${event.pageX - 190}px`;
-        } else {
-            this.tooltipBox.style.left = `${event.pageX + 20}px`;
-        }
+        if (event.pageX + 240 > window.innerWidth) this.tooltipBox.style.left = `${event.pageX - 190}px`;
+        else this.tooltipBox.style.left = `${event.pageX + 20}px`;
     }
 
     // Remove a tooltipBox e os eventos de mousemove e mouseleave

@@ -19,7 +19,8 @@ export default class MenuMobile {
 
     // Método que adiciona a classe 'active' aos elementos do menu
     // para abri-lo e detecta o clique fora dele para fechá-lo
-    openMenu() {
+    openMenu(event) {
+        event.preventDefault();
         this.menuBtn.classList.add(this.activeClass);
         this.menuList.classList.add(this.activeClass);
         // Ao clicar/touch fora do this.menuList,

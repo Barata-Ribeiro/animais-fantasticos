@@ -23,7 +23,7 @@ tabNav.init();
 const modal = new Modal('[data-modal="abrir"]', '[data-modal="fechar"]', '[data-modal="container"]');
 modal.init();
 
-const tooltip = new Tooltip('[data-tooltip]', 'ativo');
+const tooltip = new Tooltip('[data-tooltip]');
 tooltip.init();
 
 const scrollAnima = new ScrollAnima('[data-anime="scroll"]');
