@@ -12,7 +12,7 @@ export default class DropdownMenu {
         else this.events = events;
 
         // Método que controla o clique no menu e o ativa
-        this.handleClick = this.activeDropdownMenu.bind(this);
+        this.activeDropdownMenu = this.activeDropdownMenu.bind(this);
     }
 
     // Método que ativa o dropdown menu e adiciona
@@ -22,7 +22,7 @@ export default class DropdownMenu {
         event.preventDefault();
         const element = event.currentTarget;
         // Adiciona/remove a classe 'active' na li
-        element.classList.toggle(this.activeClass);
+        element.classList.add(this.activeClass);
         // Ao clicar/touch fora do this (elemento atual),
         // irá executar a função outsideClick e remover a classe 'active'
         outsideClick(element, this.events, () => {
@@ -31,7 +31,7 @@ export default class DropdownMenu {
     }
 
     // Método que adiciona os eventos de clique no dropdownMenu
-    addDropDownMenusEvent() {
+    addDropdownMenusEvent() {
         this.dropdownMenus.forEach((menu) => {
             // Em vez de adicionar o callback para cada tipo de evento, um por um,
             // cria-se uma Array com todos os tipos de eventos e,
@@ -46,7 +46,7 @@ export default class DropdownMenu {
     init() {
         // Verifica se há dropdownMenus na página
         if (this.dropdownMenus.length) {
-            this.addDropDownMenusEvent();
+            this.addDropdownMenusEvent();
         }
         // Retorna a instância da classe para encadeamento de métodos
         return this;
