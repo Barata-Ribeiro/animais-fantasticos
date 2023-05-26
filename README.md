@@ -26,6 +26,7 @@ To further showcase the capabilities of JavaScript, a custom API is created to d
 -   Clean and modern layout
 -   Easily customizable
 -   Custom API for animal list and amount
+-   Slide gallery with all animals
 -   BTC API to display donation price
 
 ## Getting Started
