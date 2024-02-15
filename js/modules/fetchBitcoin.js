@@ -9,7 +9,7 @@ export default function fetchBitcoin(url, target) {
             const btcPreco = document.querySelector(target);
             // Seta o innerText do span para o valor escolhido
             // que vem do arquivo JSON
-            btcPreco.innerText = (100 / bitcoin.BRL.sell).toFixed(4);
+            btcPreco.innerText = (1000 / bitcoin.BRL.sell).toFixed(4);
         })
         // Se tiver algum error, coloque no console o error
         .catch((error) => console.log(Error(error)));
