@@ -33,7 +33,9 @@ export default class MenuMobile {
 
     // Método que adiciona os eventos de clique ao botão do menu mobile
     addMenuMobileEvents() {
-        this.events.forEach((userEvent) => this.menuBtn.addEventListener(userEvent, this.openMenu));
+        this.events.forEach((userEvent) => this.menuBtn.addEventListener(userEvent, this.openMenu, {
+            passive: true,
+        }));
     }
 
     // Método que inicializa a classe e adiciona os eventos

@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon">
     <title>Animais Fantásticos</title>
     <meta name="author" content="Barata.Ribeiro" />
     <meta name="description" content="Site desenvolvido durante o curso de JavaScript ES6+ da Origamid.com" />
@@ -156,9 +157,9 @@
             <button title="Fecha modal" data-modal="fechar" class="fechar"></button>
             <form action="">
                 <label for="email">Email</label>
-                <input type="text" for="email" id="email" placeholder="contato@email.com" required>
+                <input type="text" for="email" id="email" placeholder="contato@email.com" autocomplete="email" required aria-required="true">
                 <label for="senha">Senha</label>
-                <input type="password" for="senha" id="senha" required>
+                <input type="password" for="senha" id="senha" autocomplete="current-password" required aria-required="true">
                 <button type="submit">Entrar</button>
             </form>
         </div>
